@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=SameGame
+GenericName=Qt implementation of SameGame
+GenericName[fi]=Qt:lla toteutettu SameGame
+Exec=samegame
+Icon=samegame
+Terminal=false
+Type=Application
+Categories=Game;LogicGame;
