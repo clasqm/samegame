@@ -57,8 +57,8 @@ protected:
     int recursiveRemovePieces(int x, int y, int color);
     void updatePlayField();
 
-    void mousePressEvent(QMouseEvent *event);
-    void paintEvent(QPaintEvent *event);
+    void mousePressEvent(QMouseEvent *event) override;
+    void paintEvent(QPaintEvent *event) override;
 
     bool gameOver;
     int score;

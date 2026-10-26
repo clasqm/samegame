@@ -16,11 +16,11 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <QtGui/QApplication>
+#include <QApplication>
+#include <QIcon>
 #include <QLibraryInfo>
 #include <QLocale>
 #include <QTranslator>
-#include <QTextCodec>
 #include "mainwindow.h"
 
 int main(int argc, char *argv[])
@@ -30,16 +30,18 @@ int main(int argc, char *argv[])
     QString locale = QLocale::system().name();
 
     QTranslator qtTranslator;
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
+    qtTranslator.load(QString("qt_") + locale, QLibraryInfo::path(QLibraryInfo::TranslationsPath));
+#else
     qtTranslator.load(QString("qt_") + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+#endif
     app.installTranslator(&qtTranslator);
 
     QTranslator ownTranslator;
     ownTranslator.load(QString("samegame_") + locale, ":/translations");
     app.installTranslator(&ownTranslator);
 
-    QTextCodec::setCodecForTr(QTextCodec::codecForName("utf8"));
-
-#ifdef WIN32
+#if defined(WIN32) || defined(_WIN32)
     app.setWindowIcon(QIcon(":/icons/samegame.png"));
 #else
     app.setWindowIcon(QIcon(":/icons/samegame.svg"));

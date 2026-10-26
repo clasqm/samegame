@@ -28,15 +28,16 @@ COPYING
 
 INSTALL
 
-    To build the sources, you need Qt SDK which is available from http://qt.nokia.com/downloads. First check out the source:
+    To build the sources, you need CMake (3.16 or later) and the Qt5 development
+    files (Qt5 Core, Gui and Widgets). First check out the source:
 
-        svn co https://samegame.svn.sourceforge.net/svnroot/samegame/trunk samegame
+        git clone https://github.com/clasqm/samegame.git
 
-    Then build using qmake:
+    Then build using CMake:
 
-        1. qmake . PREFIX=/usr/local VERSION=`date +%Y%m%d`
-        2. make
-        3. make install
+        1. cmake -S . -B build
+        2. cmake --build build
+        3. cmake --install build          (as root, or set CMAKE_INSTALL_PREFIX)
 
 URL
 

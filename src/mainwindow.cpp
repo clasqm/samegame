@@ -16,7 +16,16 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <QtGui>
+#include <QAction>
+#include <QHBoxLayout>
+#include <QSizePolicy>
+#include <QVBoxLayout>
+#include <QKeySequence>
+#include <QLabel>
+#include <QMenu>
+#include <QMenuBar>
+#include <QMessageBox>
+#include <QPushButton>
 #include "mainwindow.h"
 #include "samegamewidget.h"
 

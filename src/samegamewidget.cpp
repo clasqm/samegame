@@ -16,9 +16,14 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <QtGui>
+#include <QMouseEvent>
+#include <QPaintEvent>
+#include <QPainter>
+#include <QPushButton>
+#include <QMessageBox>
 
 #include <cstdlib>
+#include <cstring>
 #include <ctime>
 
 #include "samegamewidget.h"
